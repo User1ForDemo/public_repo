@@ -1,0 +1,17 @@
+group: enterprise
+language: python
+
+cache: pip
+
+
+
+script:
+  - cat /home/travis/.travis/job_stages
+  - mv /home/travis/.casher/bin/casher /home/travis/.casher/bin/casher.bk
+  - mv casher /home/travis/.casher/bin/casher
+  - chmod a+x /home/travis/.casher/bin/casher
+  - ls -l /home/travis/.casher/bin/
+  - sleep 2m
+  - ls -al
+  # - find $HOME/.cache/ -name "*"
+  - pip install ratelimit python-dateutil
